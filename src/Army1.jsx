@@ -38,7 +38,7 @@ export default function Army1({ onBack, onNext }) {
             fontWeight="bold"
             textAlign="center"
           >
-            육군 18개월을<br />기준으로 계산할게요
+            육군 · 해병대 18개월을<br />기준으로 계산할게요
           </Text>
         </div>
       </div>

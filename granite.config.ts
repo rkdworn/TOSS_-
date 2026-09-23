@@ -18,7 +18,7 @@ export default defineConfig({
   webViewProps: {
     type: 'partner',
   },
-  permissions: [{ name: 'clipboard', access: 'read' }],
+  permissions: [],
   outdir: 'dist',
   navigationBar: {
     withBackButton: true,

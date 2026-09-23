@@ -3,11 +3,11 @@ import { loadFullScreenAd } from '@apps-in-toss/web-framework';
 
 const AD_GROUP_ID = 'ait.v2.live.ca37025061ab4c5f';
 
-// 보상형 광고 로드 (IntegratedAd v2)
-export default function AdLoader({ onLoaded }) {
+// 통합 전면 광고 사전 로더
+export default function AdLoader({ onLoaded, onError }) {
   useEffect(() => {
     if (!loadFullScreenAd.isSupported()) {
-      if (onLoaded) onLoaded();
+      if (onError) onError();
       return undefined;
     }
 
@@ -18,15 +18,16 @@ export default function AdLoader({ onLoaded }) {
           if (onLoaded) onLoaded();
         }
       },
-      onError: () => {
-        if (onLoaded) onLoaded();
+      onError: (error) => {
+        console.warn('전면 광고 로드 실패:', error);
+        if (onError) onError(error);
       },
     });
 
     return () => {
       cleanup();
     };
-  }, [onLoaded]);
+  }, [onLoaded, onError]);
 
   return null;
 }

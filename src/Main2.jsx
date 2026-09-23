@@ -12,10 +12,10 @@ import {
 import { adaptive } from '@toss/tds-colors';
 
 const ARMY_LIST = [
-  '육군',
-  '공군',
-  '해군, 해병대',
-  '사회복무요원',
+  '육군 · 해병대 (18개월)',
+  '해군 (20개월)',
+  '공군 (21개월)',
+  '사회복무요원 (21개월)',
 ];
 
 export default function Main2({ onBack, onSelect }) {

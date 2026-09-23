@@ -37,7 +37,7 @@ export default function Navy1({ onBack, onNext }) {
             fontWeight="bold"
             textAlign="center"
           >
-            해군, 해병대 20개월을<br />기준으로 계산할게요
+            해군 20개월을<br />기준으로 계산할게요
           </Text>
         </div>
       </div>

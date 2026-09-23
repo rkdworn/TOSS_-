@@ -1,7 +1,7 @@
 import React from 'react';
-import { Asset, Text } from '@toss/tds-mobile';
+import { Asset, Text, BottomCTA } from '@toss/tds-mobile';
 
-export default function EndScreen({ onBack }) {
+export default function EndScreen({ onBack, onRestart }) {
   return (
     <div
       style={{
@@ -75,6 +75,11 @@ export default function EndScreen({ onBack }) {
             필요하시면 언제든 찾아주세요!
           </Text>
         </div>
+      </div>
+      <div style={{ marginTop: 'auto', marginBottom: 24, padding: '0 16px' }}>
+        <BottomCTA.Single onClick={onRestart ? onRestart : onBack}>
+          다시 계산하기
+        </BottomCTA.Single>
       </div>
     </div>
   );

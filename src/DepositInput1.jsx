@@ -25,10 +25,7 @@ export default function DepositInput1({ onBack, onNext, amount, onAmountChange }
         display: 'flex',
         flexDirection: 'column',
         boxSizing: 'border-box',
-        touchAction: 'none',
-        overscrollBehavior: 'none',
       }}
-      onTouchMove={e => e.preventDefault()}
     >
       {/* Toss 공통 네비게이션 바만 노출 (직접 구현 코드 제거) */}
       <Spacing size={12} />
@@ -89,7 +86,12 @@ export default function DepositInput1({ onBack, onNext, amount, onAmountChange }
       </div>
       <div style={{ flex: 1 }} />
       <div style={{ margin: '0 16px 24px 16px' }}>
-        <BottomCTA.Single loading={false} onClick={onNext}>확인</BottomCTA.Single>
+        <BottomCTA.Single
+          disabled={!amount || Number(amount) <= 0}
+          onClick={amount && Number(amount) > 0 ? onNext : undefined}
+        >
+          확인
+        </BottomCTA.Single>
       </div>
     </div>
   );
